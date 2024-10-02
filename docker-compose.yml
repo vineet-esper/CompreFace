@@ -70,9 +70,9 @@ services:
 
   compreface-core:
     restart: always
-    image: ${registry}compreface-core:${CORE_VERSION}
+    image: ${custom_registry}${custom_core}:latest
     container_name: "compreface-core"
-    command: "tail -f /dev/null"
+    command: "uwsgi --ini uwsgi.ini"
     environment:
       - ML_PORT=3000
       - IMG_LENGTH_LIMIT=${max_detect_size}

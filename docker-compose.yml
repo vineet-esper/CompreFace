@@ -71,7 +71,7 @@ services:
   compreface-core:
     restart: always
     image: ${custom_registry}${custom_core}:latest
-    container_name: "compreface-core"
+    container_name: "compreface-core-non-avx"
     command: "uwsgi --ini uwsgi.ini"
     environment:
       - ML_PORT=3000
